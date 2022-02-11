@@ -1,12 +1,15 @@
 package frame;
 
 import java.awt.Button;
+import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Label;
 import java.awt.Panel;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -63,7 +66,7 @@ public class LoginFrame extends Frame {
 		Panel paButton = new Panel();
 		paButton.add(bLog);
 		paButton.add(bCan);
-		paButton.setBounds(0, 100, 300, 30);
+		paButton.setBounds(0, 110, 300, 30);
 
 		add(lId);
 		add(tId);
@@ -71,8 +74,16 @@ public class LoginFrame extends Frame {
 		add(tPwd);
 		add(paButton);
 
-		setSize(300, 200);
+		addKeyListener(new KeyAdapter() {
+			
+		});
+		setBackground(Color.lightGray);
+		setSize(300, 180);
 		setResizable(false);
 		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		new LoginFrame();
 	}
 }
